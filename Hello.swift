@@ -225,11 +225,51 @@ class Mockingbird: Bird {
     }
 }
 
+
+protocol Fish: Animal {
+    func swim()
+}
+
+extension Fish {
+    var canFly: Bool {
+        return false
+    }
+    var canSwim: Bool {
+        return true
+    }
+    var canRun: Bool {
+        return false
+    }
+}
+
+class Tuna: Fish {
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func saySomething() {
+        print("\(self.name): Blub")
+    }
+    
+    func swim() {
+        print("I'm swimming")
+    }
+}
+
+
 let bird1 = Mockingbird(name: "Eminem")
 print(bird1.canFly)
 print(bird1.canRun)
 bird1.saySomething()
 bird1.fly()
+
+let tuna1 = Tuna(name: "Tuner")
+print(tuna1.canFly)
+print(tuna1.canSwim)
+tuna1.saySomething()
+tuna1.swim()
 
 func giveAnimal(animal: Animal) {
     animal.saySomething()
@@ -237,6 +277,11 @@ func giveAnimal(animal: Animal) {
         let bird = animal as! Bird
         bird.fly()
     }
+    if animal.canSwim {
+        let fish = animal as! Fish
+        fish.swim()
+    }
 }
 
 giveAnimal(bird1)
+giveAnimal(tuna1)
