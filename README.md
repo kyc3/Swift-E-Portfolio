@@ -15,8 +15,11 @@
 3. Click the play button
 
 ##Assignment:
+
 Below the //PROTOCOLS comment of the Hello.swift file you can see some defined protocols for animals. 
 Your assignment is to add a protocol and a class for fishes. Additionally extend the giveAnimal(animal: Animal) for fishes.
+
 Please test your code by creating an object of your newly created class do the same with it as I did with the bird1 object.
-You can compare your solution to my solution (in the solution branch).
+
+You can compare your solution to my [solution](https://github.com/kyc3/Swift-E-Portfolio/blob/Solution/Hello.swift).
 If you have any questions feel free to ask my at any time!
